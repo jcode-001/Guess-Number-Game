@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   color: #eee;
   background-color: #222;
   /* overflow-x: scroll; */
@@ -117,4 +117,36 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  /* again and check button */
+  .again,
+  .check {
+    height: 4rem;
+    width: 7.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .number {
+    width: 10rem;
+    padding: 1rem;
+  }
+
+  /* input field */
+  .guess {
+    width: 15rem;
+    padding: 0 2rem;
+  }
+
+  /* check btn*/
+  .check {
+    width: 9rem;
+  }
 }
