@@ -120,11 +120,15 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
+  html {
+    font-size: 30%;
+  }
   /* again and check button */
   .again,
   .check {
     height: 4rem;
-    width: 7.2rem;
+    font-size: 1.4rem;
+    width: 9rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +150,8 @@ h1 {
   }
 
   /* check btn*/
-  .check {
-    width: 9rem;
+  .again,
+  .between {
+    top: 5rem;
   }
 }
