@@ -1,22 +1,17 @@
 "use strict";
-
-// console.log(document.querySelector('.message').textContent);
-// document.querySelector('.message').textContent = 'correct number';
-// console.log(document.querySelector('.message').textContent);
-
-// document.querySelector('.number').textContent = 13;
-// document.querySelector('.score').textContent = 10;
-
-// document.querySelector('.guess').value = 23;
-// console.log(document.querySelector('.guess').value);
-
-/* START */
-let highScore = 0;
-let score = 20;
 const scoreBox = document.querySelector(".score");
 const message = document.querySelector(".message");
 const numberBox = document.querySelector(".number");
 let secretNumber = Math.floor(Math.random() * 20) + 1;
+let highScore = 0;
+let score = 20;
+
+const playWinSound = () => {
+  const checkBtn = document.querySelector(".check");
+  const audio = new Audio("assets/audio/retro-win.wav");
+  console.log("Playing sound 🎶");
+  audio.play();
+};
 
 const checkScore = (hint) => {
   if (score > 1) {
@@ -31,7 +26,6 @@ const checkScore = (hint) => {
 
 const checkGuess = () => {
   const guess = Number(document.querySelector(".guess").value);
-  console.log(typeof guess);
 
   // when there is no input
   if (!guess) {
@@ -39,6 +33,7 @@ const checkGuess = () => {
 
     // when player wins
   } else if (guess === secretNumber) {
+    playWinSound();
     message.textContent = "🎉 Correct Number!";
     numberBox.textContent = secretNumber;
 
